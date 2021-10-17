@@ -31,9 +31,10 @@ div.flex-top-container{
 }
 
 div.flex-top-container div{
-    width: 350px;
+    max-width: 350px;
     height: 200px;
     background-color: #fff;
+
 }
 
 div.flex-top-container img{
@@ -89,6 +90,7 @@ div.cards{
     display: flex;
     flex-flow: column wrap;
     flex: 1;    
+
 }
 
 div.cards div{
@@ -113,4 +115,33 @@ div.cards p{
 
 }
 
+/* ---- Reponsividade ----*/
 
+@media (max-width: 1200px){
+   div.flex-mid-container{
+       display: block;
+   }
+
+   div.ads{
+       margin: 0 auto;
+       width: 600px;
+   }
+
+   div.cards{
+       margin: 0 auto;
+   }
+}
+
+@media (max-width: 600px){
+    div.ads{
+        width: 450px;    
+    }
+
+    div.cards div{
+        flex-direction: column;
+    }
+
+    div.cards p{
+        margin-top: 1rem;
+    }
+}
