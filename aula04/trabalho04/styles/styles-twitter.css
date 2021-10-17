@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img:hover{
+    outline: 1px solid black;
+}
+
+/* ---- flex container ---- */
+
+div.flex-container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 1rem;
+
+}
+
+h1{
+    margin: 1.5rem 0 0.5rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* ---- main ----  */
+
+main{
+    margin-right: 2rem;
+}
+
+
+main>div.main-container{
+    background-color: rgb(153, 153, 153);
+}
+
+
+main>div.main-container img{
+    width: 500px;
+    height: 550px;
+}
+
+main>div.main-container p{
+    padding: 0.2rem;
+}
+
+/* ---- aside ---- */
+
+
+aside>div.aside-container{
+    height: 574px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+aside>div.aside-container div:last-child{
+    margin-top: 22px;
+}
+
+aside>div.aside-container div{
+    background-color: rgb(153, 153, 153);
+}
+
+aside>div.aside-container img{
+    width: 400px;
+    height: 250px;
+}
+
+aside>div.aside-container p{
+    padding: 0.2rem;
+}
+
+
+/* ----- Responsividade -----  */
+
+@media (max-width: 950px){
+    div.flex-container{
+        flex-direction: column;
+        max-width: 850px;
+
+        align-items: center;
+
+        margin-bottom: 3rem;
+    }
+
+    main{
+        margin: 0;
+    }
+    
+
+    main>div.main-container{
+        margin-bottom: 2rem;
+    }
+
+    main>div.main-container img{
+        height: 250px;
+        width: 400px;
+    }
+
+}
+
+
+
+
+
+
+
+
+

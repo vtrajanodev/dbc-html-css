@@ -1,0 +1,282 @@
+ /* --- importação do google fonts ---  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+/* Estilização geral */
+:root{
+    --primary-color: rgb(255, 83, 83);
+    --white: #fff;
+    --background: #ccc;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #eec;
+    min-height: 100%;
+}
+
+/* ---- Home - HEADER ---- */
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header, main,section{
+    background-color: var(--background);
+}
+
+
+header div.container{
+    background-color: var(--primary-color);
+    max-height: 100px;
+    padding: 0.4rem;
+}
+
+header div.container img{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+
+header .initial-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem 5rem;
+}
+
+header nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+header nav ul>li{
+    margin-right: 5rem;
+}
+
+header a{
+    text-decoration: none;
+    font-style: italic;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+
+}
+
+header a:hover{
+    color: #eee;
+    font-weight: 600;
+}
+
+h1{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+main,section>div.container{
+    text-align: justify;
+    padding: 1rem 2rem;
+}
+
+main div.mushroom-elements{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+main div.mushroom-elements div{
+    background-color: var(--primary-color);
+
+
+    width: 400px;
+    height: 300px;
+
+    display: flex;
+    flex-direction:  column;
+     align-items: center;
+    text-align: center;
+
+    border-radius: 8px;
+    transition: border 0.1s;
+}
+
+main div.mushroom-elements div:hover{
+    border: 2px solid #000;
+}
+
+main div.mushroom-elements img{
+    border-radius: 100%;
+    width: 150px;
+    margin: 2rem 0 4rem
+}
+
+main div.mushroom-elements span{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+main div.container p{
+    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px black;
+}
+
+main div.container p:hover{
+    border: 2px solid var(--primary-color);
+}
+
+
+section div.container{
+    width: 100%;
+    text-align: center;
+}
+
+section div.map iframe{
+    margin-top: 2rem;
+    border-radius: 8px;
+}
+
+
+footer>div.container{
+    background-color: var(--primary-color);
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+footer ul li{
+    list-style-type: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-style: italic;
+}
+
+footer a:hover{
+    color: var(--background);
+}
+
+footer address{
+    text-align: center;
+    color: var(--white);
+}
+
+/* ---- ABOUT ---- */
+
+main div.about{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+main div.about h2{
+    margin-bottom: 1rem;
+}
+
+main div.about iframe{
+    box-shadow: 5px 5px rgb(129, 129, 129);
+    border-radius: 16px;
+    border-top: 3px solid #000;
+    border-left: 3px solid #000;
+}
+
+/* ---- CONTACT ---- */
+
+main div.container{
+    padding: 5rem 0;
+}
+
+main div.form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 1.1rem auto; 
+    
+}
+
+main div.form label{
+    font-style: italic;
+    font-weight: 600;
+}
+
+main div.form input::placeholder{
+    font-weight: 600;
+    font-style: italic;
+}
+
+main div.form input, main div.form select, main div.form textarea{
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-top: 0.4rem ;
+    margin-bottom: 1.5rem;
+    caret-color: var(--primary-color);
+}
+
+main div.form input.submit{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+main div.form input.submit:hover{
+    filter: brightness(0.9);
+}
+
+footer div.container-contact{
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+/* ----- responsividade ----- */
+
+@media (max-width: 1276px){
+    main div.mushroom-elements div{
+        width: 250px;
+        height: 150px;
+    }
+    main div.mushroom-elements img{
+        border-radius: 100%;
+        width: 70px;
+        margin: 1rem 1rem
+    }
+    
+    main div.mushroom-elements span{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px){
+    main div.mushroom-elements div{
+        margin: 0 0.25rem;
+    }
+
+    main div.about iframe{
+        width: 100%;
+    }
+
+    header div.container img{
+        display: none;
+    }
+}
+
+
+
+
+
+

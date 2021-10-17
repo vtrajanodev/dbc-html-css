@@ -1,0 +1,36 @@
+/* ---- main ----  */
+
+img{
+    width: 100%;
+}
+
+img:hover{
+    outline: 1px solid black;
+}
+
+main>h1{
+
+    text-align: center;
+    margin-top: 5rem ; 
+}
+
+main section.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+main section.gallery>div{
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+main section.gallery p{
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* ---- there is not a footer ----  */

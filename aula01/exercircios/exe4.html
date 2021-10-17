@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulários</title>
+</head>
+
+<body>
+    <h1>HTML</h1>
+
+    <form>
+
+        <label for="username">Usuário</label>
+        <input id="username" type="text" name="username" placeholder="digite um login">
+
+        <br>
+        <br>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="digite um email">
+
+        <br>
+        <br>
+
+        <label for="password">Senha</label>
+        <input id="password" type="password" name="password" placeholder="digite uma senha">
+
+        <p>Selecione sua idade</p>
+
+        <input type="radio" name="age" id="option-1" value="0-25">
+        <label for="option-2">0 a 25 anos</label>
+
+        <input type="radio" name="age" id="option-2" value="26-50">
+        <label for="option-3">26 a 50 anos</label>
+
+        <input type="radio" name="age" id="option-3" value="51+">
+        <label for="option-4">51 ou mais anos</label>
+
+        <br>
+        <br>
+
+        <label for="question">Pergunta secreta:</label>
+        <select name="question" id="question">
+            <option value="q1">Qual seu animal favorito?</option>
+            <option value="q2">Qual sua cor favorita?</option>
+            <option value="q3">Qual sua cidade de nascimento?</option>
+        </select>
+
+        <br>
+        <br>
+
+        <label for="answer">Resposta secreta:</label>
+        <input type="text" id="answer" name="answer" required>
+
+        <br>
+        <br>
+
+        <label for="bio">Bio</label>
+        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+
+        <br>
+        <br>
+        <input type="submit" value="salvar" id="submit">
+    </form>
+
+</body>
+
+</html>
