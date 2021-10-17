@@ -9,6 +9,10 @@ h1{
     text-align: center;
 }
 
+img:hover{
+    outline: 1px solid black;
+}
+
 /* ---- container principal ----  */
 
 div.principal-container{
@@ -106,7 +110,7 @@ div.cards img{
 div.cards p{
     margin-left: 10px;
     font-weight: 700;
-    
+
 }
 
 
