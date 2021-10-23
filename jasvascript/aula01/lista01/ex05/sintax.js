@@ -11,13 +11,14 @@ if (
     (typeof p2 === 'number' && p2.toString() !== 'NaN') &&
     (typeof p3 === 'number' && p3.toString() !== 'NaN')
 ) {
-    media = ((p1 + p2 + p3) / 3)
+    var media = ((p1 + p2 + p3) / 3)
+    
     if (media < 5) {
-        alert(`Aluno reprovado com a média ${media}`)
+        alert(`Aluno reprovado com a média ${media.toFixed(2)}`)
     } else if (media >= 5 && media <= 6.9) {
-        alert(`Aluno de recuperação com a média ${media}`)
+        alert(`Aluno de recuperação com a média ${media.toFixed(2)}`)
     } else if (media >= 7) {
-        alert(`Parabéns! Aluno aprovado com a média ${media}`)
+        alert(`Parabéns! Aluno aprovado com a média ${media.toFixed(2)}`)
     }
 } else {
     alert('Os números inseridos precisam ser números.')
