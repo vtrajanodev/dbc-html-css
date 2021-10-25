@@ -3,7 +3,7 @@ var name = prompt('Por favor, digite seu nome:')
 var text = prompt('Você gosta de programar?:')
 
 if(text == answer.toLowerCase()){
-    alert(`Parabéns ${name} Victvocê acertou a resposta secreta que é ${answer.toLowerCase()}`)
+    alert(`Parabéns ${name} você acertou a resposta secreta que é ${answer.toLowerCase()}`)
 }else
 
 if(text == "não"){
