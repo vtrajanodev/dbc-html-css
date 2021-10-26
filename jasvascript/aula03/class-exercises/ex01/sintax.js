@@ -5,10 +5,10 @@
 
 function lista(myList){
     for(let i= 0; i < [...arguments].length; i++){
-        console.log(...arguments[i])
+        console.log(...arguments[i]);
     }
 }
 
-var arr = [1,'Olá', undefined, 99999, 'Texto qualquer']
+var arr = [1,'Olá', undefined, 99999, 'Texto qualquer'];
 
-lista(arr)
+lista(arr);

@@ -4,14 +4,14 @@
 
 function sum(n1, n2){
     if(isNaN(n1) || isNaN(n2)){
-        errorFunction()
+        errorFunction();
     }else{
-        return console.log(`${n1 + n2}`)
+        return console.log(`${n1 + n2}`);
     }
 }
 
 function errorFunction(){
-    alert('Você precisa inserir números válidos')
+    alert('Você precisa inserir números válidos');
 }
 
-sum(1, 'f')
+sum(1, 'f');

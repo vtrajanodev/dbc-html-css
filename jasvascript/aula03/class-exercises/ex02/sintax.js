@@ -7,9 +7,9 @@ var myString = '       minhaaaaaaa string JS     '
 
 
 function newString(str){
-    var stringConverted = str.trim().toUpperCase()
+    var stringConverted = str.trim().toUpperCase();
 
-    return console.log(stringConverted)
+    return console.log(stringConverted);
 }
 
-newString(myString)
+newString(myString);
