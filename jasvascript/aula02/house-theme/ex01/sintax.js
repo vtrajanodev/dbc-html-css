@@ -8,5 +8,18 @@
 */
 
 
-var SalarioInicial = 1000
+var porcentagem = 1.5
+var salario = 1000
+var ano = 2016
 
+do{
+    if(ano < 2018){
+        salario = salario + ((salario * porcentagem) / 100)
+    }else if (ano > 2018){  
+        porcentagem = porcentagem * 2
+        salario = salario + ((salario * porcentagem) / 100)
+    }
+    ano++
+}while(ano <= 2021)
+
+console.log(salario)
