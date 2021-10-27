@@ -17,4 +17,4 @@ function gigantNumber (lista) {
   
 }
 
-gigantNumber()
+gigantNumber(list1)
