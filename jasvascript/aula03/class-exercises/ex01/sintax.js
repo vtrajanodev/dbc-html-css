@@ -3,12 +3,12 @@
     e essa função imprima no console o valor de cada elemento da lista;
 */
 
-function lista(myList){
-    for(let i= 0; i < [...arguments].length; i++){
-        console.log(...arguments[i]);
+var myList = [1, 'Olá', undefined, 99999, 'Texto qualquer']
+
+function printListOnConsole(listParam){
+    for(let i = 0; i < listParam.length; i++){
+        console.log(listParam[i])
     }
 }
 
-var arr = [1,'Olá', undefined, 99999, 'Texto qualquer'];
-
-lista(arr);
+printListOnConsole(myList)
