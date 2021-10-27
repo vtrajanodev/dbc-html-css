@@ -12,3 +12,6 @@ function arrayOrder(myArray){
 
 
 console.log(arrayOrder(array))
+
+
+// Ainda incorreto, corrigir amanhã do jeito certo

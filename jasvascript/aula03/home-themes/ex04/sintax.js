@@ -3,3 +3,21 @@
 
     4b) Crie outra função para remover o último elemento da lista;
 */
+
+var element = 'Novo elemento no array'
+var array = []
+
+function addElementOnArray(myElement){
+    array.push(myElement)
+    console.log(array)
+}
+
+addElementOnArray(element)
+addElementOnArray('Elemento a ser removido')
+
+function removeLastElementFromArray(item){
+    array.pop(item)
+    console.log(array)
+}
+
+removeLastElementFromArray(addElementOnArray)
