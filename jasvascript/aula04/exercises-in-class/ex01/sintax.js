@@ -3,9 +3,6 @@
     Exemplo: minhaFuncao(370914) // retorno esperado: 419073;
 */
 
-
-
-
 function revertArray (num) {
 
     var lista2 = []
