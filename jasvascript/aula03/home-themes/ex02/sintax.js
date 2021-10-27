@@ -14,4 +14,4 @@ function arrayOrder(myArray){
 console.log(arrayOrder(array))
 
 
-// Ainda incorreto, corrigir amanhã do jeito certo
+// Ainda incorreto, corrigir do jeito certo
