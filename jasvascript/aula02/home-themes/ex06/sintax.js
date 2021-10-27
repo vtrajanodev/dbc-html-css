@@ -2,7 +2,7 @@
     6) Leia 5 valores numéricos do usuário e calcule seu somatório utilizando o laço Do While;
 */
 
-var num = ''
+var num = 0
 var indice = 0
 
 for(let i = 1; i <= 5; i++){
