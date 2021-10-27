@@ -6,9 +6,16 @@
 var lista = ['3','7','0','9','1', '4'];
 var lista2 = []; 
 
-function revertArray (myList, newList) {
-    for (i = 0; i <= myList.length; i++) {
+function revertArray (myList) {
+    var tamanhoArray = myList.length
+    for (i = 0; i <= tamanhoArray; i++) {
         var item = myList.pop()
-        newList.push(item)
+        if (typeof item !== 'undefined'){
+            lista2.push(item)
+        }
+       
     }
+    return lista2
 }
+
+revertArray()
