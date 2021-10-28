@@ -3,13 +3,10 @@
     crie uma função que recebe um nome e retorne o aluno que tiver aquele nome (Find) 
 */
 
-
 var students = []
     
-const addStudents = student => {
+const addStudents = student =>  students.push(student)
 
-    students.push(student)
-}
 
 addStudents({
     nome: 'Victor',
@@ -20,16 +17,15 @@ addStudents({
     nome: 'João',
     idade: 30
 })
-    
 
 console.log(students)
 
 const findStudents = (wantedStudent) => {
-    aluno = students.find(student => student.nome.toLowerCase() === wantedStudent)
+    aluno = students.find(student => student.nome.toLowerCase().localeCompare(wantedStudent.toLowerCase(), 'pt', {sensitivity: 'base'}) === 0)
     console.log(aluno)
 }
 
-findStudents('victor')
+findStudents('joao')
 
 
 
