@@ -7,7 +7,6 @@ function countVowelsAndConsonants(str) {
     var myArrayOfCharacters = str.toLowerCase().split("")
     var countVowels = 0
     var countConsonants = 0
-    
     countVowels = myArrayOfCharacters.filter(characters => 'aeiou'.includes(characters)).length
     countConsonants = str.length - countVowels
     
@@ -15,3 +14,5 @@ function countVowelsAndConsonants(str) {
 }
 
 countVowelsAndConsonants('Victor Trajano')
+
+console.log('pela'.split('e'))
