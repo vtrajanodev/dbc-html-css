@@ -1,22 +1,17 @@
 /*
-    1) Crie uma função que inverta um número; (NÃO pode usar a função revert())
-    Exemplo: minhaFuncao(370914) // retorno esperado: 419073;
+    // 1) Crie uma função que receba uma string e retorna a quantidade de vogais e a quantidade de consoantes na string 
+//    da seguinte forma: 'A string [stringInformada] tem X vogas e X consoantes';
 */
 
-function revertArray (num) {
-
-    var lista2 = []
-    var newList = num.toString()
-    var arrayCharacters = newList.split("")
-    var tamanhoArray = arrayCharacters.length
-
-    for (i = 0; i <= tamanhoArray; i++) {
-        var item = arrayCharacters.pop()
-        if (typeof item !== 'undefined'){
-            lista2.push(Number.parseInt(item))
-        }
-    }
-    return console.log(...lista2)
+function countVowelsAndConsonants(str) {
+    var myArrayOfCharacters = str.toLowerCase().split("")
+    var countVowels = 0
+    var countConsonants = 0
+    
+    countVowels = myArrayOfCharacters.filter(characters => 'aeiou'.includes(characters)).length
+    countConsonants = str.length - countVowels
+    
+    console.log(`A string ${str} possui ${countVowels} vogais e ${countConsonants} consoantes` )
 }
 
-revertArray(123456)
+countVowelsAndConsonants('Victor Trajano')
