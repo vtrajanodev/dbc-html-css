@@ -37,7 +37,7 @@ const findProduct = (id) => {
     return uniqueProduct;
 }
 
-console.log(findProduct(1)); // terceiro console.log para mostrar a procura de um ID. 
+console.log(findProduct(2)); // terceiro console.log para mostrar a procura de um ID. 
 
 arrayOfproducts.forEach(product => console.log(product)); // Quarto console.log para mostrar todos os produtos.
 
@@ -49,7 +49,7 @@ arrayOfproducts.forEach(product => console.log(product)); // Quarto console.log 
 const totalPatrimony = () => {
     
     arrayOfproducts.reduce((total, item) => {
-        soma = total + item.valor;
+        var soma = total + item.valor;
         console.log(soma); //Quinto console.log para mostrar o valor total do patrimonio (pq aparece 1k dps 2k ? Queria só 2k.)
         return soma;
     }, 0)
