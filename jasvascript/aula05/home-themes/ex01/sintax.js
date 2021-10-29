@@ -49,6 +49,7 @@ arrayOfproducts.forEach(product => console.log(product)); // Quarto console.log 
 const totalPatrimony = () => {
     
     arrayOfproducts.reduce((total, item) => {
+        
         var soma = total + item.valor;
         console.log(soma); //Quinto console.log para mostrar o valor total do patrimonio (pq aparece 1k dps 2k ? Queria só 2k.)
         return soma;
