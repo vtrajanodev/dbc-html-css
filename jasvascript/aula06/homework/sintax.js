@@ -6,6 +6,7 @@
 const MENSAGEM_DE_ERRO_NOME = "É preciso informar um nome para o valor em questão";
 const MENSAGEM_DE_ERRO_NÚMERO = "É preciso informar um número para o valor em questão";
 var id = 0;
+var code = 0
 var arrayOfContributors = [];
 var arrayOfClocking = [];
 var arrayOfProjects = [];
@@ -45,7 +46,7 @@ class Marcacao{
 class Colaborador{
     id = id + 1;
     name = MENSAGEM_DE_ERRO_NOME;
-    projectCode = 0;
+    projectCode = 1;
     clocking = [];
 
     constructor(name){
@@ -60,8 +61,8 @@ class Colaborador{
     } 
 
     contribuitorRegister = (contribuitor) => {
-        arrayOfContributors = arrayOfContributors.push({
-            id: contribuitor.id,
+        arrayOfContributors.push({
+            id: arrayOfContributors.indexOf(id) === -1 ? id += 1 : contribuitor.id,
             name: contribuitor.name,
             projectCode: contribuitor.projectCode,
             clocking: this.clocking       
@@ -70,22 +71,39 @@ class Colaborador{
 }
 
 console.log(arrayOfContributors);
-const contribuitor = new Colaborador('Joãozinho');
-contribuitor.contribuitorRegister(contribuitor);
-contribuitor.pointRegister(1, 8);
-contribuitor.pointRegister(2, 8.30);
-contribuitor.pointRegister(3, 9);
+const contribuitor1 = new Colaborador('Joãozinho');
+contribuitor1.contribuitorRegister(contribuitor1);
+contribuitor1.pointRegister(1, 8);
+
+const contribuitor2 = new Colaborador('Pelé');
+contribuitor2.contribuitorRegister(contribuitor2)
+
 
 class Project{
-    code = 0; //MENSAGEM_DE_ERRO_NUMERO
+    code = code + 1; //MENSAGEM_DE_ERRO_NUMERO
     title = '';//MENSAGEM_DE_ERRO_NOME
-    allocatedContribuitor = [];
+    allocatedContribuitors = [];
+
+    constructor(title){
+        this.title = title
+    }
 
     projectRegister = (project) => {
         arrayOfProjects = arrayOfProjects.push({
-            code = code + 1,
+            code: project.code,
             title: project.title,
-            allocatedContribuitor = this.allocatedContribuitor
+            allocatedContribuitors: this.allocatedContribuitors
         })
     }
+
+    allocateContribuitorOnProject(contribuitor){
+        if(new Colaborador(contribuitor1).projectCode === this.code){
+            this.allocatedContribuitors.push(contribuitor)  
+        }
+    }
 }
+
+console.log(arrayOfProjects)
+const projeto1 = new Project('Projeto1')
+projeto1.projectRegister(projeto1)
+projeto1.allocateContribuitorOnProject(contribuitor1)
