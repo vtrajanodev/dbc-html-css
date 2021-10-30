@@ -44,7 +44,7 @@ class Marcacao{
 }
 
 class Colaborador{
-    id = id + 1;
+    id = 0;
     name = MENSAGEM_DE_ERRO_NOME;
     projectCode = 1;
     clocking = [];
@@ -80,7 +80,7 @@ contribuitor2.contribuitorRegister(contribuitor2)
 
 
 class Project{
-    code = code + 1; //MENSAGEM_DE_ERRO_NUMERO
+    code = 1; //MENSAGEM_DE_ERRO_NUMERO
     title = '';//MENSAGEM_DE_ERRO_NOME
     allocatedContribuitors = [];
 
@@ -89,7 +89,7 @@ class Project{
     }
 
     projectRegister = (project) => {
-        arrayOfProjects = arrayOfProjects.push({
+        arrayOfProjects.push({
             code: project.code,
             title: project.title,
             allocatedContribuitors: this.allocatedContribuitors
@@ -108,3 +108,9 @@ const projeto1 = new Project('Projeto1')
 projeto1.projectRegister(projeto1)
 projeto1.allocateContribuitorOnProject(contribuitor1)
 projeto1.allocateContribuitorOnProject(contribuitor2)
+
+const projeto2 = new Project('Projeto2')
+projeto2.projectRegister(projeto2)
+projeto2.allocateContribuitorOnProject(contribuitor2)
+
+
