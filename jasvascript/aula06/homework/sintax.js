@@ -10,13 +10,6 @@ var arrayOfContributors = []
 var arrayOfClocking = []
 var arrayOfProjects = []
 
-//Funcionalidades
-class ConsoleLog{
-    mostraLog(value){
-        console.log(value)
-    }
-}
-
 //Validações
 
 class Validations{
@@ -83,8 +76,10 @@ class Colaborador{
 }
 
 console.log(arrayOfContributors)
-
-
 const contribuitor = new Colaborador('Joãozinho')
 contribuitor.contribuitorRegister(contribuitor)
 contribuitor.pointRegister(1, 8)
+contribuitor.pointRegister(2, 8.30)
+contribuitor.pointRegister(3, 9)
+
+class Project
