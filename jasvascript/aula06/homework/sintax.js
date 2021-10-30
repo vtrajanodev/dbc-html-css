@@ -17,7 +17,6 @@ class ConsoleLog{
     }
 }
 
-
 //Validações
 
 class Validations{
@@ -41,8 +40,8 @@ class Validations{
 //Criação das classes
 
 class Marcacao{
-    day = MENSAGEM_DE_ERRO_NÚMERO;
-    hour = MENSAGEM_DE_ERRO_NÚMERO;
+    day = ''//MENSAGEM_DE_ERRO_NÚMERO;
+    hour = ''//MENSAGEM_DE_ERRO_NÚMERO;
 
     constructor(day, hour){
         this.day = new Validations().isNumber(day) ? day : this.day
@@ -66,33 +65,26 @@ class Colaborador{
         this.name = name
     }
 
-    
+    pointRegister = (d, h) =>{
+        this.clocking.push({    
+            day: d,
+            hour: h
+        })
+    } 
 
     contribuitorRegister = (contribuitor) => {
         arrayOfContributors = arrayOfContributors.push({
             id: contribuitor.id,
             name: contribuitor.name,
             projectCode: contribuitor.projectCode,
-            clocking: this.pointRegister()
+            clocking: this.clocking       
         })
-    }
-  
-    pointRegister = (d, h) =>{
-        this.clocking.push({
-            dia: d,
-            hora: h
-        })
-        console.log(this.clocking,this.id)
-    }
-
-    mostraLog(){
-        console.log(this.name)
     }
 }
 
+console.log(arrayOfContributors)
+
 
 const contribuitor = new Colaborador('Joãozinho')
-// contribuitor.pointRegister(1, 8)
-// new Colaborador().contribuitorRegister(contribuitor)
-
-
+contribuitor.contribuitorRegister(contribuitor)
+contribuitor.pointRegister(1, 8)
