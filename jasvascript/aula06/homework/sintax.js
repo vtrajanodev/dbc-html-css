@@ -44,13 +44,14 @@ class Marcacao{
 }
 
 class Colaborador{
-    id = 0;
-    name = MENSAGEM_DE_ERRO_NOME;
-    projectCode = 1;
+    id = undefined;
+    name = '';//MENSAGEM_DE_ERRO_NOME;
+    projectCode = null;
     clocking = [];
 
     constructor(name){
         this.name = name;
+        this.id = id += 1
     }
 
     pointRegister = (d, h) =>{
@@ -58,59 +59,59 @@ class Colaborador{
             day: d,
             hour: h
         })
-    } 
+    }
 
     contribuitorRegister = (contribuitor) => {
         arrayOfContributors.push({
-            id: arrayOfContributors.indexOf(id) === -1 ? id += 1 : contribuitor.id,
+            id: arrayOfContributors.length + 1,
             name: contribuitor.name,
-            projectCode: contribuitor.projectCode,
             clocking: this.clocking       
         })
     }
+
+    allocateContribuitorOnProject = (project) => {
+        this.projectCode = project.code
+    }
 }
 
-console.log(arrayOfContributors);
 const contribuitor1 = new Colaborador('Joãozinho');
 contribuitor1.contribuitorRegister(contribuitor1);
 contribuitor1.pointRegister(1, 8);
+
 
 const contribuitor2 = new Colaborador('Pelé');
 contribuitor2.contribuitorRegister(contribuitor2)
 
 
 class Project{
-    code = 1; //MENSAGEM_DE_ERRO_NUMERO
+    code = null; //MENSAGEM_DE_ERRO_NUMERO
     title = '';//MENSAGEM_DE_ERRO_NOME
-    allocatedContribuitors = [];
-
+    
     constructor(title){
-        this.title = title
+        this.title = title;
+        this.code = code += 1
     }
-
+    
     projectRegister = (project) => {
         arrayOfProjects.push({
-            code: project.code,
+            code: this.code,
             title: project.title,
-            allocatedContribuitors: this.allocatedContribuitors
         })
-    }
-
-    allocateContribuitorOnProject(contribuitor){
-        if(new Colaborador(contribuitor1).projectCode === this.code){
-            this.allocatedContribuitors.push(contribuitor)  
-        }
     }
 }
 
-console.log(arrayOfProjects)
 const projeto1 = new Project('Projeto1')
 projeto1.projectRegister(projeto1)
-projeto1.allocateContribuitorOnProject(contribuitor1)
-projeto1.allocateContribuitorOnProject(contribuitor2)
 
-const projeto2 = new Project('Projeto2')
+
+
+const projeto2 = new Project('Projeto1')
 projeto2.projectRegister(projeto2)
-projeto2.allocateContribuitorOnProject(contribuitor2)
 
 
+contribuitor2.allocateContribuitorOnProject(projeto2)
+console.log(contribuitor2)
+
+
+console.log(arrayOfContributors);
+console.log(arrayOfProjects)
