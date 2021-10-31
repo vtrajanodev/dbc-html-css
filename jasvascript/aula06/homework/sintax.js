@@ -117,7 +117,7 @@ const dislocateCollaborator = (project, contribuitor) => {
 }
 
 const showMenu = () => {
-    var menu = prompt('Escola um número com base no menu a seguir:\n1- Cadastrar colaborador, \n2- Cadastrar projeto');
+    var menu = prompt('Escolha um número com base no menu a seguir:\n 1- Cadastrar colaborador, \n 2- Cadastrar projeto \n 3-Alocar colaborador \n 4- Desalocar colaborador, \n 5- Marcar ponto, \n 6- Ver lista de colaboradores sem projeto, \n 7- Ver lista de projetos sem colaboradores, \n 8- Ver lista de colaboradores que ainda não marcaram o ponto, \n 9- Encerrar execução do sistema ');
 
 
     switch (menu) {
@@ -143,8 +143,9 @@ const showMenu = () => {
             let empregado = prompt('Nome do empregado');
             dislocateCollaborator(nomeProjeto, empregado);
             break;
+        // case '5': alert('saiu do sistema')
+            // break;
         default: alert('saiu do sistema');
-        case '5': alert('saiu do sistema')
     }
 }
 
