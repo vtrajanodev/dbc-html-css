@@ -67,8 +67,8 @@ const contribuitorRegister = (name) => {
     let contribuitor = new Colaborador(name);
     if (arrayOfContributors.indexOf(contribuitor.id) === -1) {
         arrayOfContributors.push(contribuitor);
-        
     }
+    alert(`Colaborador ${name} cadastrado com sucesso`)
 }
 
 class Project {
@@ -93,56 +93,59 @@ const projectRegister = (title) => {
         arrayOfProjects.push(project);
     }
     console.log(arrayOfProjects);
+    alert(`Projeto ${title} cadastrado com sucesso`)
+
 }
 
 const allocateContribuitorsOnProject = (contribuitor, project) => {
-    
+
     let findContribuitor = arrayOfContributors.find(c => c.name === contribuitor);
     let findProject = arrayOfProjects.find(p => p.title === project);
     findProject.allocatedContribuitors.push(findContribuitor);
     console.log(arrayOfProjects);
+
+    alert(`O contribuior ${contribuitor} foi alocado ao projeto ${project}`);
 }
 
-const dislocateCollaborator = (project, contribuitor) =>{
+const dislocateCollaborator = (project, contribuitor) => {
     let findProject = arrayOfProjects.find(p => p.title === project);
     let index = findProject.allocatedContribuitors.indexOf(contribuitor);
     findProject.allocatedContribuitors.splice(index, 1);
+
+    alert(`O contribuior ${contribuitor} foi removido do projeto ${project}`);
+
 }
 
 const showMenu = () => {
-    var menu = prompt('Escolha um numero');
+    var menu = prompt('Escola um número com base no menu a seguir:\n1- Cadastrar colaborador, \n2- Cadastrar projeto');
 
-    var codeMenu = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-    if (codeMenu.indexOf(menu) === -1) {
-        alert('Você deve inserir um dos números do menu para continuar ou escolha a opção 9 para sair do sistema');
-
-    } else {
-
-        switch (menu) {
-            case '1': 
-                let nome = prompt('Qual nome do colaborador que deseja cadastrar ?');
-                contribuitorRegister(nome);
-                console.log(arrayOfContributors);
-                showMenu();
+    switch (menu) {
+        case '1':
+            let nome = prompt('Qual nome do colaborador que deseja cadastrar ?');
+            contribuitorRegister(nome);
+            console.log(arrayOfContributors);
+            confirm('Continuar no sistema?') === true ? showMenu() : alert('Saiu do sistema')
             break;
-            case '2':
-                let nomeDoProjeto = prompt('Qual nome do projeto que desejas cadastrar?');
-                projectRegister(nomeDoProjeto);
-                showMenu();
-                break;
-            case '3':
-                let contribuitor = prompt('Digite um colaborador');
-                let project = prompt(`Digite o nome do projeto que você deseja alocar ${contribuitor}`);
-                allocateContribuitorsOnProject(contribuitor, project);
-                showMenu();
-                break;
-            case '4': 
-                let nomeProjeto = prompt('Nome do projeto');
-                let empregado = prompt('Nome do empregado');
-                dislocateCollaborator(nomeProjeto, empregado);
-            return
-        }
+        case '2':
+            let nomeDoProjeto = prompt('Qual nome do projeto que desejas cadastrar?');
+            projectRegister(nomeDoProjeto);
+            showMenu();
+            break;
+        case '3':
+            let contribuitor = prompt('Digite um colaborador');
+            let project = prompt(`Digite o nome do projeto que você deseja alocar ${contribuitor}`);
+            allocateContribuitorsOnProject(contribuitor, project);
+            showMenu();
+            break;
+        case '4':
+            let nomeProjeto = prompt('Nome do projeto');
+            let empregado = prompt('Nome do empregado');
+            dislocateCollaborator(nomeProjeto, empregado);
+            break;
+        default: alert('saiu do sistema');
+        case '5': alert('saiu do sistema')
     }
 }
+
 showMenu()
