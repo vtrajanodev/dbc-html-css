@@ -156,17 +156,29 @@ const showMenu = () => {
             dislocateCollaborator(nomeProjeto, empregado);
             showMenu();
             break;
-        case '5': 
+        case '5':
             let nomeDoColaborador = prompt('Digite o nome do colaborador que deseja marcar ponto')
             let day = prompt('Digite o dia da marcação de ponto')
             let hour = prompt('Digite a hora da marcação de ponto')
             marcaPonto(nomeDoColaborador, day, hour)
             showMenu();
             break;
-        default: alert('saiu do sistema');
-        case '6':
+            case '6':
+                let arrayOfContribuitorsWithoutProject = arrayOfContributors.filter(c => c.projectCode === 0)
+                console.log(arrayOfContribuitorsWithoutProject)
+                break;
 
-            break;
+            case '7':
+                let arrayOfProjectsWithouContribuitors = arrayOfProjects.filter(p => p.allocatedContribuitors.length === 0)
+                console.log(arrayOfProjectsWithouContribuitors)
+                break;
+            case '8':
+                let arrayOfContribuitorsWithoutCloking = arrayOfContributors.filter(c => c.clocking.length === 0)
+                console.log(arrayOfContribuitorsWithoutCloking)
+                break;
+            case '9':
+                break;
+        default: alert('saiu do sistema');
     }
 }
 
