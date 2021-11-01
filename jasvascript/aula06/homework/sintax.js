@@ -31,7 +31,6 @@ class Validations {
 }
 //Criação das classes
 
-
 class Colaborador {
     id = 0;
     name = '';
@@ -42,10 +41,6 @@ class Colaborador {
         this.name = name;
         this.id = id += 1;
         this.projectCode = 0;
-    }
-
-    registrarContribuidor = () => {
-        contribuitorRegister();
     }
 
     pointRegister = (d, h) => {
@@ -61,6 +56,7 @@ const contribuitorRegister = (name) => {
     if (arrayOfContributors.indexOf(contribuitor.id) === -1) {
         arrayOfContributors.push(contribuitor);
     }
+    console.log(arrayOfContributors)
     alert(`Colaborador ${name} cadastrado com sucesso`)
 }
 
@@ -126,7 +122,6 @@ const showMenu = () => {
         case '1':
             let nome = prompt('Qual nome do colaborador que deseja cadastrar ?');
             contribuitorRegister(nome);
-            confirm('Continuar no sistema?') === true ? showMenu() : alert('Saiu do sistema')
             showMenu();
             break;
         case '2':
@@ -168,9 +163,8 @@ const showMenu = () => {
                 console.log(arrayOfContribuitorsWithoutCloking);
                 showMenu();
                 break;
-            case '9':
-                break;
-        default: alert('saiu do sistema');
+            case '9': return true
+        break;
     }
 }
 
