@@ -5,8 +5,8 @@
 //Variaveis
 const MENSAGEM_DE_ERRO_NOME = "É preciso informar um nome para o valor em questão";
 const MENSAGEM_DE_ERRO_NÚMERO = "É preciso informar um número para o valor em questão";
-var code = 0
-var id = 0
+var code = 0;
+var id = 0;
 var arrayOfContributors = [];
 var arrayOfProjects = [];
 
@@ -36,12 +36,12 @@ class Colaborador {
     id = 0;
     name = '';
     clocking = [];
-    projectCode = 0
+    projectCode = 0;
 
     constructor(name) {
         this.name = name;
-        this.id = id += 1
-        this.projectCode = 0
+        this.id = id += 1;
+        this.projectCode = 0;
     }
 
     registrarContribuidor = () => {
@@ -65,9 +65,9 @@ const contribuitorRegister = (name) => {
 }
 
 const marcaPonto = (contribuitor, day, hour) => {
-    thisContribuitor = arrayOfContributors.find(c => c.name === contribuitor)
-    thisContribuitor.pointRegister(day, hour)
-    console.log(thisContribuitor)
+    thisContribuitor = arrayOfContributors.find(c => c.name === contribuitor);
+    thisContribuitor.pointRegister(day, hour);
+    console.log(thisContribuitor);
 }
 
 class Project {
@@ -101,7 +101,7 @@ const allocateContribuitorsOnProject = (contribuitor, project) => {
     let findContribuitor = arrayOfContributors.find(c => c.name === contribuitor);
     let findProject = arrayOfProjects.find(p => p.title === project);
     findProject.allocatedContribuitors.push(findContribuitor);
-    findContribuitor.projectCode = findProject.code
+    findContribuitor.projectCode = findProject.code;
     console.log(arrayOfProjects);
     console.log(arrayOfContributors);
 
@@ -111,8 +111,8 @@ const allocateContribuitorsOnProject = (contribuitor, project) => {
 const dislocateCollaborator = (project, contribuitor) => {
     let findProject = arrayOfProjects.find(p => p.title === project);
     let index = findProject.allocatedContribuitors.indexOf(contribuitor);
-    let findContribuitor = findProject.allocatedContribuitors.find(c => c.name === contribuitor)
-    findContribuitor.projectCode = 0
+    let findContribuitor = findProject.allocatedContribuitors.find(c => c.name === contribuitor);
+    findContribuitor.projectCode = 0;
     findProject.allocatedContribuitors.splice(index, 1);
 
     alert(`O contribuior ${contribuitor} foi removido do projeto ${project}`);
@@ -147,24 +147,24 @@ const showMenu = () => {
             showMenu();
             break;
         case '5':
-            let nomeDoColaborador = prompt('Digite o nome do colaborador que deseja marcar ponto')
-            let day = prompt('Digite o dia da marcação de ponto')
-            let hour = prompt('Digite a hora da marcação de ponto')
-            marcaPonto(nomeDoColaborador, day, hour)
+            let nomeDoColaborador = prompt('Digite o nome do colaborador que deseja marcar ponto');
+            let day = prompt('Digite o dia da marcação de ponto');
+            let hour = prompt('Digite a hora da marcação de ponto');
+            marcaPonto(nomeDoColaborador, day, hour);
             showMenu();
             break;
             case '6':
-                let arrayOfContribuitorsWithoutProject = arrayOfContributors.filter(c => c.projectCode === 0)
-                console.log(arrayOfContribuitorsWithoutProject)
+                let arrayOfContribuitorsWithoutProject = arrayOfContributors.filter(c => c.projectCode === 0);
+                console.log(arrayOfContribuitorsWithoutProject);
                 break;
 
             case '7':
-                let arrayOfProjectsWithouContribuitors = arrayOfProjects.filter(p => p.allocatedContribuitors.length === 0)
-                console.log(arrayOfProjectsWithouContribuitors)
+                let arrayOfProjectsWithouContribuitors = arrayOfProjects.filter(p => p.allocatedContribuitors.length === 0);
+                console.log(arrayOfProjectsWithouContribuitors);
                 break;
             case '8':
-                let arrayOfContribuitorsWithoutCloking = arrayOfContributors.filter(c => c.clocking.length === 0)
-                console.log(arrayOfContribuitorsWithoutCloking)
+                let arrayOfContribuitorsWithoutCloking = arrayOfContributors.filter(c => c.clocking.length === 0);
+                console.log(arrayOfContribuitorsWithoutCloking);
                 break;
             case '9':
                 break;
@@ -172,4 +172,4 @@ const showMenu = () => {
     }
 }
 
-showMenu()
+showMenu();
