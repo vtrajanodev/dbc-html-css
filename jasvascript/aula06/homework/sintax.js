@@ -35,6 +35,7 @@ class Marcacao {
     day = '';//MENSAGEM_DE_ERRO_NÚMERO;
     hour = '';//MENSAGEM_DE_ERRO_NÚMERO;
 
+
     constructor(day, hour) {
         this.day = new Validations().isNumber(day) ? day : this.day;
         this.hour = new Validations().isNumber(hour) ? hour : this.hour;
@@ -45,10 +46,12 @@ class Colaborador {
     id = 0;
     name = '';
     clocking = [];
+    projectCode = 0
 
     constructor(name) {
         this.name = name;
         this.id = id += 1
+        this.projectCode = 0
     }
 
     registrarContribuidor = () => {
@@ -69,6 +72,12 @@ const contribuitorRegister = (name) => {
         arrayOfContributors.push(contribuitor);
     }
     alert(`Colaborador ${name} cadastrado com sucesso`)
+}
+
+const marcaPonto = (contribuitor, day, hour) => {
+    thisContribuitor = arrayOfContributors.find(c => c.name === contribuitor)
+    thisContribuitor.pointRegister(day, hour)
+    console.log(thisContribuitor)
 }
 
 class Project {
@@ -102,7 +111,9 @@ const allocateContribuitorsOnProject = (contribuitor, project) => {
     let findContribuitor = arrayOfContributors.find(c => c.name === contribuitor);
     let findProject = arrayOfProjects.find(p => p.title === project);
     findProject.allocatedContribuitors.push(findContribuitor);
+    findContribuitor.projectCode = findProject.code
     console.log(arrayOfProjects);
+    console.log(arrayOfContributors);
 
     alert(`O contribuior ${contribuitor} foi alocado ao projeto ${project}`);
 }
@@ -110,10 +121,11 @@ const allocateContribuitorsOnProject = (contribuitor, project) => {
 const dislocateCollaborator = (project, contribuitor) => {
     let findProject = arrayOfProjects.find(p => p.title === project);
     let index = findProject.allocatedContribuitors.indexOf(contribuitor);
+    let findContribuitor = findProject.allocatedContribuitors.find(c => c.name === contribuitor)
+    findContribuitor.projectCode = 0
     findProject.allocatedContribuitors.splice(index, 1);
 
     alert(`O contribuior ${contribuitor} foi removido do projeto ${project}`);
-
 }
 
 const showMenu = () => {
@@ -142,10 +154,19 @@ const showMenu = () => {
             let nomeProjeto = prompt('Nome do projeto');
             let empregado = prompt('Nome do empregado');
             dislocateCollaborator(nomeProjeto, empregado);
+            showMenu();
             break;
-        // case '5': alert('saiu do sistema')
-            // break;
+        case '5': 
+            let nomeDoColaborador = prompt('Digite o nome do colaborador que deseja marcar ponto')
+            let day = prompt('Digite o dia da marcação de ponto')
+            let hour = prompt('Digite a hora da marcação de ponto')
+            marcaPonto(nomeDoColaborador, day, hour)
+            showMenu();
+            break;
         default: alert('saiu do sistema');
+        case '6':
+
+            break;
     }
 }
 
