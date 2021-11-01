@@ -31,16 +31,6 @@ class Validations {
 }
 //Criação das classes
 
-class Marcacao {
-    day = '';//MENSAGEM_DE_ERRO_NÚMERO;
-    hour = '';//MENSAGEM_DE_ERRO_NÚMERO;
-
-
-    constructor(day, hour) {
-        this.day = new Validations().isNumber(day) ? day : this.day;
-        this.hour = new Validations().isNumber(hour) ? hour : this.hour;
-    }
-}
 
 class Colaborador {
     id = 0;
