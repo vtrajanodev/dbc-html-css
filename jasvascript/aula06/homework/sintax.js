@@ -126,8 +126,8 @@ const showMenu = () => {
         case '1':
             let nome = prompt('Qual nome do colaborador que deseja cadastrar ?');
             contribuitorRegister(nome);
-            console.log(arrayOfContributors);
             confirm('Continuar no sistema?') === true ? showMenu() : alert('Saiu do sistema')
+            showMenu();
             break;
         case '2':
             let nomeDoProjeto = prompt('Qual nome do projeto que desejas cadastrar?');
@@ -156,15 +156,17 @@ const showMenu = () => {
             case '6':
                 let arrayOfContribuitorsWithoutProject = arrayOfContributors.filter(c => c.projectCode === 0);
                 console.log(arrayOfContribuitorsWithoutProject);
+                showMenu();
                 break;
-
             case '7':
                 let arrayOfProjectsWithouContribuitors = arrayOfProjects.filter(p => p.allocatedContribuitors.length === 0);
                 console.log(arrayOfProjectsWithouContribuitors);
+                showMenu();
                 break;
             case '8':
                 let arrayOfContribuitorsWithoutCloking = arrayOfContributors.filter(c => c.clocking.length === 0);
                 console.log(arrayOfContribuitorsWithoutCloking);
+                showMenu();
                 break;
             case '9':
                 break;
