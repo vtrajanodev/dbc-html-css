@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    max-height: 500px;
+    max-width: 900px;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-bottom: 2rem;
+}
+
+.container div.titles{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+button{
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    border-radius: 0.2rem;
+}
+
+button:hover{
+    filter: brightness(0.9);
+}
+
+.jogo-da-velha{
+    max-height: 400px;
+    max-width: 300px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+
+.jogo-da-velha div{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jogo-da-velha div:hover{
+    background-color: #e7e7e7;
+}
+
+#bloco1, #bloco2, #bloco3, #bloco4, #bloco5, #bloco6{
+    border-bottom: 0.5rem solid rgb(145, 145, 145);
+}
+
+#bloco1, #bloco2, #bloco4, #bloco5, #bloco7, #bloco8{
+    border-right: 0.5rem solid rgb(145, 145, 145);
+
+}
+
+.players{
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.players h3{
+    margin-left: 2rem;
+}
+
+.p1{
+    color: blue;
+}
+
+.p2{
+    color: red;
+}
+
+
+
+
+
