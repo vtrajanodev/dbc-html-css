@@ -20,14 +20,12 @@ const play = () => {
             if (block[i].innerText === '' && playTime === playerOne) {
                 block[i].innerText = 'X';
                 round += 1;
-                console.log(round)
                 playTime = playerTwo;
                 verifyWin();
                 verifyDrawn();
             } else if (block[i].innerText === '' && playTime === playerTwo) {
                 block[i].innerHTML = 'O';
                 round += 1;
-                console.log(round)
                 playTime = playerOne;
                 verifyWin();
                 verifyDrawn();
