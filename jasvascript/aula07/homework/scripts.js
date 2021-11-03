@@ -1,7 +1,7 @@
 const playerOne = 'X';
 const playerTwo = 'O';
 var playTime = playerOne;
-var round = 0
+var round = 0;
 const play = () => {
     let button = document.querySelector('button')
     if (button.innerText === 'Recomeçar') {
@@ -11,25 +11,24 @@ const play = () => {
         }
     }
 
-    button.innerText = 'Recomeçar'
-    var block = document.getElementsByClassName('block')
+    button.innerText = 'Recomeçar';
+    var block = document.getElementsByClassName('block');
     for (let i = 0; i < block.length; i++) {
 
         block[i].addEventListener('click', () => {
 
             if (block[i].innerText === '' && playTime === playerOne) {
                 block[i].innerText = 'X';
-                round += 1
-                console.log(round)
+                round += 1;
                 playTime = playerTwo;
                 verifyWin();
-                verifyDrawn()
+                verifyDrawn();
             } else if (block[i].innerText === '' && playTime === playerTwo) {
                 block[i].innerHTML = 'O';
-                round += 1
+                round += 1;
                 playTime = playerOne;
                 verifyWin();
-                verifyDrawn()
+                verifyDrawn();
             }
         })
     }
@@ -84,9 +83,9 @@ const verifyWin = () => {
 
 const verifyDrawn = () => {
     if (round >= 9) {
-        alert('O jogo empatou')
+        alert('O jogo empatou');
+        round = 0;
     }
-    console.log(round)
 }
 
 document.querySelector('body').addEventListener('click', () => {
