@@ -12,7 +12,7 @@ const play = () => {
     }
 
     button.innerText = 'Recomeçar';
-    var block = document.getElementsByClassName('block');
+    var block = document.querySelectorAll('.block');
     for (let i = 0; i < block.length; i++) {
 
         block[i].addEventListener('click', () => {
@@ -20,12 +20,14 @@ const play = () => {
             if (block[i].innerText === '' && playTime === playerOne) {
                 block[i].innerText = 'X';
                 round += 1;
+                console.log(round)
                 playTime = playerTwo;
                 verifyWin();
                 verifyDrawn();
             } else if (block[i].innerText === '' && playTime === playerTwo) {
                 block[i].innerHTML = 'O';
                 round += 1;
+                console.log(round)
                 playTime = playerOne;
                 verifyWin();
                 verifyDrawn();
