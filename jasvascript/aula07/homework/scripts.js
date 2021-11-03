@@ -3,7 +3,10 @@ const playerTwo = 'O';
 var playTime = playerOne;
 var round = 0;
 
+//Inicio de jogada
 const play = () => {
+
+    //Condição de reset
     let button = document.querySelector('button')
     if (button.innerText === 'Recomeçar') {
         for (let i = 1; i <= 9; i++) {
@@ -13,6 +16,7 @@ const play = () => {
         document.querySelector('.vencedor').innerText = ''
     }
 
+    //Se jogo iniciado, adiciona os eventos de click.
     button.innerText = 'Recomeçar';
     var block = document.querySelectorAll('.block');
     for (let i = 0; i < block.length; i++) {
@@ -20,16 +24,19 @@ const play = () => {
         block[i].addEventListener('click', () => {
 
             if (block[i].innerText === '' && playTime === playerOne) {
+
                 document.querySelector('.vencedor').innerText = `Player ${playerTwo} na vez`
                 block[i].innerText = 'X';
                 block[i].style.color = 'Blue'
                 round += 1;
                 playTime = playerTwo;
+                
                 if(verifyWin()){
                     document.querySelector('.vencedor').appendChild(document.createTextNode('  Clique em reiniciar para jogar outra partida'));
                     round = 0;
                 }
                 verifyDrawn();
+
             } else if (block[i].innerText === '' && playTime === playerTwo) {
                 
                 document.querySelector('.vencedor').innerText = `Player ${playerOne} na vez`
@@ -37,9 +44,9 @@ const play = () => {
                 block[i].style.color = 'red'
                 round += 1;
                 playTime = playerOne;
-                
+
                 if(verifyWin()){
-                    alert('Reinicie o jogo para outra partida');
+                    document.querySelector('.vencedor').appendChild(document.createTextNode('  Clique em reiniciar para jogar outra partida'));
                     round = 0;
                 }
                 verifyDrawn();
@@ -48,6 +55,7 @@ const play = () => {
     }
 }
 
+//Milhões de ifs para verificação de vitória
 const verifyWin = () => {
 
     let div1 = document.getElementById('bloco1');
@@ -127,6 +135,7 @@ const verifyWin = () => {
     }
 }
 
+//Verificação para empate
 const verifyDrawn = () => {
     if (round >= 9) {
         document.querySelector('.vencedor').innerText = ''
@@ -135,12 +144,14 @@ const verifyDrawn = () => {
     }
 }
 
+//Função para obrigar a clicar em iniciar
 document.querySelector('body').addEventListener('click', () => {
     if (document.querySelector('button').innerText !== 'Recomeçar') {
         alert('Você deve clicar em iniciar para começar o jogo');
     }
 })
 
+//Buscar o botão para iniciar a partida
 let button = document.querySelector('button');
 button.addEventListener('click', play);
 
