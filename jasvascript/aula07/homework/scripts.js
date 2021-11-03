@@ -10,6 +10,9 @@ const play = () => {
             document.getElementById(`bloco${i}`).innerText = '';
             playTime = playerOne;
         }
+
+        document.querySelector('.vencedor').innerText = ''
+
     }
 
     button.innerText = 'Recomeçar';
@@ -24,7 +27,7 @@ const play = () => {
                 round += 1;
                 playTime = playerTwo;
                 if(verifyWin()){
-                    alert('Reinicie o jogo para outra partida');
+                    document.querySelector('.vencedor').appendChild(document.createTextNode('  Clique em reiniciar para jogar outra partida'))
                     round = 0
                 }
                 verifyDrawn();
@@ -56,59 +59,59 @@ const verifyWin = () => {
     let div9 = document.getElementById('bloco9');
 
     if (div1.innerText === playerOne && div2.innerText === playerOne && div3.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div1.innerText === playerTwo && div2.innerText === playerTwo && div3.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     } else if (div4.innerText === playerOne && div5.innerText === playerOne && div6.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div4.innerText === playerTwo && div5.innerText === playerTwo && div6.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     } else if (div7.innerText === playerOne && div8.innerText === playerOne && div9.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div7.innerText === playerTwo && div8.innerText === playerTwo && div9.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     } else if (div1.innerText === playerOne && div5.innerText === playerOne && div9.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div1.innerText === playerTwo && div5.innerText === playerTwo && div9.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     } else if (div7.innerText === playerOne && div5.innerText === playerOne && div3.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div7.innerText === playerTwo && div5.innerText === playerTwo && div3.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     } else if (div3.innerText === playerOne && div6.innerText === playerOne && div9.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div3.innerText === playerTwo && div6.innerText === playerTwo && div9.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     } else if (div2.innerText === playerOne && div5.innerText === playerOne && div8.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div2.innerText === playerTwo && div5.innerText === playerTwo && div8.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     } else if (div1.innerText === playerOne && div4.innerText === playerOne && div7.innerText === playerOne) {
-        alert(`O jogador ${playerOne} ganhou`);
+        document.querySelector('.vencedor').appendChild(document.createTextNode('Player 1 venceu!'))
         return true
     } else if (div1.innerText === playerTwo && div4.innerText === playerTwo && div7.innerText === playerTwo) {
-        alert(`O jogador ${playerTwo} ganhou`);
+            document.querySelector('.vencedor').appendChild(document.createTextNode('Player 2 venceu!'))
         return true
     }
 }
 
 const verifyDrawn = () => {
     if (round >= 9) {
-        alert('O jogo empatou');
+        document.querySelector('.vencedor').appendChild(document.createTextNode('O jogo empatou, clique em reiniciar para outra partida.'));
         round = 0;
     }
 }
