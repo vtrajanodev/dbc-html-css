@@ -22,7 +22,7 @@ const play = () => {
     for (let i = 0; i < block.length; i++) {
 
         block[i].addEventListener('click', () => {
-
+            //Se diferente vazio, pode jogar, se play1, estiliza para azul e e inclui o X. 
             if (block[i].innerText === '' && playTime === playerOne) {
 
                 document.querySelector('.vencedor').innerText = `Player ${playerTwo} na vez`
@@ -31,6 +31,7 @@ const play = () => {
                 round += 1;
                 playTime = playerTwo;
                 
+                //Se tiver um vencedor, round inicia do 0.
                 if(verifyWin()){
                     document.querySelector('.vencedor').appendChild(document.createTextNode('  Clique em reiniciar para jogar outra partida'));
                     round = 0;
