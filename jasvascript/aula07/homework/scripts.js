@@ -2,6 +2,7 @@ const playerOne = 'X';
 const playerTwo = 'O';
 var playTime = playerOne;
 var round = 0;
+
 const play = () => {
     let button = document.querySelector('button')
     if (button.innerText === 'Recomeçar') {
