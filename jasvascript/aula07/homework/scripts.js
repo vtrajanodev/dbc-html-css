@@ -24,6 +24,7 @@ const play = () => {
                 playTime = playerTwo;
                 if(verifyWin()){
                     alert('Reinicie o jogo para outra partida');
+                    round = 0
                 }
                 verifyDrawn();
             } else if (block[i].innerText === '' && playTime === playerTwo) {
@@ -33,6 +34,7 @@ const play = () => {
                 playTime = playerOne;
                 if(verifyWin()){
                     alert('Reinicie o jogo para outra partida');
+                    round = 0
                 }
                 verifyDrawn();
             }
