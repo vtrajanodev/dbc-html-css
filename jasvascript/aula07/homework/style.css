@@ -52,6 +52,7 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 }
 
 .jogo-da-velha div:hover{
@@ -84,6 +85,8 @@ button:hover{
 .p2{
     color: red;
 }
+
+
 
 
 
