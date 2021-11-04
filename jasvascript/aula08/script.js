@@ -99,19 +99,18 @@ const validarData = () => { // deve retornar um boolean (true = válido, false =
 
     let ehValido = false;
     
- 
     let inputData = document.getElementById('date-input-registration');
     let dataDigitada = inputData.value;
-    let dataSemBarras = dataDigitada.replaceAll('/' , '')
-    let validDate = moment(dataSemBarras, 'DDMMYYY').isValid()
-    let maiorDeIdade = moment().diff(moment(dataSemBarras, 'DDMMYYYY'), 'years')
+    let dataSemBarras = dataDigitada.replaceAll('/' , '');
+    let validDate = moment(dataSemBarras, 'DDMMYYY').isValid();
+    let maiorDeIdade = moment().diff(moment(dataSemBarras, 'DDMMYYYY'), 'years');
     
-    if(validDate && maiorDeIdade >= 18 ) ehValido = true
+    if(validDate && maiorDeIdade >= 18 ) ehValido = true;
 
-    let erroData = document.getElementById('date-registration-error')
+    let erroData = document.getElementById('date-registration-error');
 
     dataDigitada === '' ? erroData.setAttribute('class' , 'd-none') : 
-    ehValido ? erroData.setAttribute('class', 'd-none') : erroData.setAttribute('class', 'text-danger')
+    ehValido ? erroData.setAttribute('class', 'd-none') : erroData.setAttribute('class', 'text-danger');
 
     return ehValido;
     
