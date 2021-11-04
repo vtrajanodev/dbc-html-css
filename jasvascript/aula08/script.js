@@ -55,13 +55,13 @@ const validarSenha = () => { // deve retornar um boolean (true = válido, false 
     if (!possuiLetra) {
         ehValido = false;
     }
-    if(!possuiLetraMinuscula){
+    if (!possuiLetraMinuscula) {
         ehValido = false;
     }
-    if(!possuiLetraMaiuscula){
+    if (!possuiLetraMaiuscula) {
         ehValido = false;
     }
-    if(!naoPossuiEspacos){
+    if (!naoPossuiEspacos) {
         ehValido = false
     }
     if (!possuiCharEspecial) {
@@ -78,7 +78,7 @@ const validarSenha = () => { // deve retornar um boolean (true = válido, false 
 
     let erroSenha = document.getElementById('password-registration-error')
 
-    ehValido ?  erroSenha.setAttribute('class', 'd-none')  :  erroSenha.setAttribute('class', 'text-danger')
+    ehValido ? erroSenha.setAttribute('class', 'd-none') : erroSenha.setAttribute('class', 'text-danger')
 
     return ehValido;
 }
@@ -98,22 +98,30 @@ const validarData = () => { // deve retornar um boolean (true = válido, false =
     */
 
     let ehValido = false;
-    
+
     let inputData = document.getElementById('date-input-registration');
     let dataDigitada = inputData.value;
-    let dataSemBarras = dataDigitada.replaceAll('/' , '');
+    let dataSemBarras = dataDigitada.replaceAll('/', '');
     let validDate = moment(dataSemBarras, 'DDMMYYY').isValid();
     let maiorDeIdade = moment().diff(moment(dataSemBarras, 'DDMMYYYY'), 'years');
-    
-    if(validDate && maiorDeIdade >= 18 ) ehValido = true;
+    let numChars = dataSemBarras.length;
+
+    if (numChars !== 8 && (numChars === 2 || numChars === 4)) {
+
+        dataDigitada += '/';
+        inputData.value = dataDigitada;
+
+    }
+
+    if (validDate && maiorDeIdade >= 18) ehValido = true;
 
     let erroData = document.getElementById('date-registration-error');
 
-    dataDigitada === '' ? erroData.setAttribute('class' , 'd-none') : 
-    ehValido ? erroData.setAttribute('class', 'd-none') : erroData.setAttribute('class', 'text-danger');
+    dataDigitada === '' ? erroData.setAttribute('class', 'd-none') :
+        ehValido ? erroData.setAttribute('class', 'd-none') : erroData.setAttribute('class', 'text-danger');
 
     return ehValido;
-    
+
 }
 
 
