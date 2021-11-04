@@ -49,9 +49,10 @@ const validarSenha = () => { // deve retornar um boolean (true = válido, false 
 
     // TODO: adicionar regras
     let possuiLetraMinuscula = arrayChar.some(char => char === char.toLowerCase());
-    let possuiLetraMaiuscula = arrayChar.some(char => char === char.toUpperCase());
+    let possuiLetraMaiuscula = arrayChar.find(char => char === char.toUpperCase());
     let naoPossuiEspacos = arrayChar.every(char => char !== " ")
-
+    console.log(naoPossuiEspacos)
+    console.log(possuiLetraMaiuscula)
     if (!possuiLetra) {
         ehValido = false;
     }
@@ -107,10 +108,8 @@ const validarData = () => { // deve retornar um boolean (true = válido, false =
     let numChars = dataSemBarras.length;
 
     if (numChars !== 8 && (numChars === 2 || numChars === 4)) {
-
         dataDigitada += '/';
         inputData.value = dataDigitada;
-
     }
 
     if (validDate && maiorDeIdade >= 18) ehValido = true;
