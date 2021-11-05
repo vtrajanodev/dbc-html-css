@@ -1,11 +1,18 @@
 {
   "colaboradores": [
     {
-      "name": "Victor Trajano da Silva",
+      "name": "victor trajano da silva",
       "email": "trajanodev@hotmail.com",
       "senha": "12345Ab!",
       "dataNascimento": "30/01/1998",
       "id": 1
+    },
+    {
+      "name": "victor trajano da silva",
+      "email": "trajanodev@hotmail.com",
+      "senha": "12345Ab!",
+      "dataNascimento": "30/01/1998",
+      "id": 2
     }
   ]
 }
