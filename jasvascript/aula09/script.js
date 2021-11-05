@@ -112,13 +112,13 @@ const irPara = (origem, destino) => {
     elementoOrigem.className = elementoOrigem.className.replace('d-flex', 'd-none');
 }
 
-const irParaEdicao = (userEdit) => {
+const irParaEdicao = (event) => {
     let elementoOrigem = document.getElementById('home');
     let elementoDestino = document.getElementById('edition');
     elementoDestino.className = elementoDestino.className.replace('d-none', 'd-flex');
     elementoOrigem.className = elementoOrigem.className.replace('d-flex', 'd-none');
 
-    let id = userEdit.target.id
+    let id = event.target.id
     let nameInput = document.getElementById('name-input-edit')
     let dateInput = document.getElementById('date-input-edit')
     let emailInput = document.getElementById('email-input-edit')
