@@ -1,16 +1,11 @@
 {
   "colaboradores": [
     {
-      "dataNascimento": "16/07/1990",
-      "email": "joaozinho@dbccompany.com.br",
-      "senha": "123Ab!",
-      "id": 1
-    },
-    {
+      "name": "Victor Trajano da Silva",
       "email": "trajanodev@hotmail.com",
       "senha": "12345Ab!",
       "dataNascimento": "30/01/1998",
-      "id": 2
+      "id": 1
     }
   ]
 }

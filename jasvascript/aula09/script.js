@@ -102,7 +102,6 @@ const adicionarMascaraData = (input, data) => {
 }
 //#endregion Validação Data
 
-
 const resetarCampos = (...campos) => {
     campos.forEach(c => c.value = '');
 }
@@ -129,6 +128,29 @@ const validarLogin = () => {
         .catch(error => console.error(error));
 }
 
+const validarNome = () => {
+
+    let ehValido = true;
+    let nameInputValue = document.getElementById('name-input-registration').value;
+    let arrayName = [...nameInputValue]
+    arrayName = arrayName.filter(e =>  e !== ' ')
+    let possuiNumero = arrayName.some(n => isNaN(parseInt(n)) === false && n !== ' ')
+    let temCharEspecial = arrayName.some(c => c.toLowerCase() === c.toUpperCase() && isNaN(parseInt(c)))
+   
+    if(possuiNumero){
+        ehValido = false;
+    }
+    if(temCharEspecial){
+        ehValido = false;
+    }
+
+    console.log(possuiNumero)
+
+    let erroNome = document.getElementById('name-registration-error')
+
+    ehValido ? erroNome.setAttribute('class', 'd-none') : erroNome.setAttribute('class', 'text-danger')
+}
+
 const listarUsuarios = () => {
     // aqui entra lógica de GET para os usuários
     axios.get('http://localhost:3000/colaboradores')
@@ -137,8 +159,14 @@ const listarUsuarios = () => {
             res.forEach(res => {
                 let userList = document.getElementById('user-list')
                 let li = document.createElement('li')
+                let buttonUp = document.createElement('button')
+                buttonUp.innerText = 'Update'
+                let buttonDel = document.createElement('button')
+                buttonDel.innerText = 'Delete'
                 li.innerText = res.email
                 userList.appendChild(li)
+                userList.appendChild(buttonUp)
+                userList.appendChild(buttonDel)
             })
         })
 };
@@ -172,6 +200,7 @@ const validarCadastro = () => {
 }
 
 const cadastrarUsuario = () => {
+    let nameInput
     let dataInput = document.getElementById('date-input-registration');
     let emailInput = document.getElementById('email-input-registration');
     let senhaInput = document.getElementById('password-input-registration');
