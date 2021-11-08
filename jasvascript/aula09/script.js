@@ -1,3 +1,4 @@
+var idAtual = 0
 
 //#region Validação Email
 const validarEmail = () => {
@@ -119,6 +120,7 @@ const irParaEdicao = (event) => {
     elementoOrigem.className = elementoOrigem.className.replace('d-flex', 'd-none');
 
     let id = event.target.id
+    idAtual = id
     let nameInput = document.getElementById('name-input-edit')
     let dateInput = document.getElementById('date-input-edit')
     let emailInput = document.getElementById('email-input-edit')
@@ -149,7 +151,7 @@ const atualizarUsuario = () => {
        senha: senhaInput.value,
     }
 
-    axios.put(`http://localhost:3000/colaboradores`, colaboradorAtualizado)
+    axios.put(`http://localhost:3000/colaboradores/${idAtual}`, colaboradorAtualizado)
 }
 
 const validarLogin = () => {
@@ -192,22 +194,21 @@ const listarUsuarios = () => {
     // aqui entra lógica de GET para os usuários
     axios.get('http://localhost:3000/colaboradores')
         .then(response => {
-            let res = response.data
-            res.forEach(res => {
+            let colaborador = response.data
+            colaborador.forEach(colaborador => {
                 let userList = document.getElementById('user-list')
                 let myDiv = document.createElement('div')
                 let li = document.createElement('li')
-                li.innerText = res.email
+                li.innerText = colaborador.email
 
                 let buttonUp = document.createElement('button')
                 buttonUp.innerText = 'Update'
-                buttonUp.setAttribute('id', res.id)
-                buttonUp.setAttribute('classs' , 'button-id')
+                buttonUp.setAttribute('id', colaborador.id)
                 buttonUp.addEventListener('click', irParaEdicao)
 
                 let buttonDel = document.createElement('button')
                 buttonDel.innerText = 'Delete'
-                buttonDel.setAttribute('id', res.id)
+                buttonDel.setAttribute('id', colaborador.id)
                 buttonDel.addEventListener('click', deleteUser)
 
                 myDiv.appendChild(li)
@@ -254,7 +255,7 @@ const validarCadastro = () => {
     }
 }
 
-const cadastrarUsuario = () => {
+const cadastrarUsuario =() => {
     let nameInput = document.getElementById('name-input-registration')
     let dataInput = document.getElementById('date-input-registration');
     let emailInput = document.getElementById('email-input-registration');

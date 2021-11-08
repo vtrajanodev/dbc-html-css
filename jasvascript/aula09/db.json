@@ -1,10 +1,10 @@
 {
   "colaboradores": [
     {
-      "name": "victor trajano da silva",
+      "name": "victor trajano",
+      "dataNascimento": "30/01/1998",
       "email": "trajanodev@hotmail.com",
       "senha": "12345Ab!",
-      "dataNascimento": "30/01/1998",
       "id": 1
     },
     {

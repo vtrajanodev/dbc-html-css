@@ -15,6 +15,7 @@ body{
     margin: 2rem auto;
     justify-content: center;
     align-items: center;
+    background-color: #ccc;
 }
 
 h1{
